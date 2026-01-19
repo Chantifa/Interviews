@@ -1,6 +1,5 @@
 from collections import deque
 
-
 class RequestQueue:
     def __init__(self):
         """Initialize the request queue."""
