@@ -1,4 +1,4 @@
-'''
+"""
 Given the root of a binary tree with unique values and
 the values of two different nodes of the tree x and y,
 return true if the nodes corresponding to the values x and y
@@ -35,7 +35,7 @@ The number of nodes in the tree is in the range [2, 100].
 Each node has a unique value.
 x != y
 x and y are exist in the tree.
-'''
+"""
 
 
 # Definition for a binary tree node.

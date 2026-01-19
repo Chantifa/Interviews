@@ -54,31 +54,16 @@ class RateLimiter:
 
 ### The Data Structure
 
-'''
-This
-dictionary
-maps
-each
-user
-to
-their
-list
-of
-request
-timestamps:
-
-```python
+"""
+This dictionary maps each user to their list of request timestamps
 {
     "user_A": [1705100000.1, 1705100030.5, 1705100045.2],
     "user_B": [1705100010.0]
 }
-```
-
 
 ### Walking Through an Example
 
-Let
-'s trace through with `max_requests=3` and `window_seconds=60`:
+Let's trace through with `max_requests=3` and `window_seconds=60`:
 Time
 0: 00 - user_A
 makes
@@ -160,13 +145,8 @@ because
 timestamp: [10, 20, 65]
 └── Return
 True ✅ (window has moved!)
-```
-
----
 
 ## Visual Representation
-
-```
 Timeline(seconds):
 0
 10
@@ -210,13 +190,10 @@ requests(0
 fell
 out!)
 └── ALLOWED!
-```
 
----
+
 
 ## Testing the Solution
-
-```python
 # Test it yourself
 limiter = RateLimiter(max_requests=3, window_seconds=60)
 
@@ -225,10 +202,6 @@ print(limiter.is_allowed("user_A"))  # True
 print(limiter.is_allowed("user_A"))  # True
 print(limiter.is_allowed("user_A"))  # False (rate limited!)
 print(limiter.is_allowed("user_B"))  # True (different user)
-```
-
----
-
 ## Complexity Analysis
 
 | Aspect | Complexity |
@@ -242,7 +215,6 @@ u = users, r = max
 requests
 stored |
 
----
 
 ## Follow-Up Questions an Interviewer Might Ask
 
@@ -264,14 +236,11 @@ we
 can
 pop
 from the left in O(1):
-
-```python
 from collections import deque
 
 # Instead of filtering the whole list:
 while requests and requests[0] <= window_start:
     requests.popleft()  # O(1) operation
-```
 
 ### 2. "How would this work in a distributed system?"
 
@@ -311,8 +280,6 @@ removes
 users
 with no recent requests, or use a TTL-based cache.
 
----
-
 ## Key Concepts to Remember
 
 1. ** Sliding
@@ -342,9 +309,6 @@ to
 save
 memory and maintain
 accuracy
-
----
-
 ## Ready for the Next Challenge?
 
 Would
@@ -370,4 +334,4 @@ round **?
 Let
 me
 know! 💪
-'''
+"""

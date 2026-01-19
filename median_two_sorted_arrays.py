@@ -1,4 +1,4 @@
-'''
+"""
 Given two sorted arrays nums1 and nums2 of size m and n respectively,
 return the median of the two sorted arrays.
 
@@ -31,7 +31,7 @@ nums2.length == n
 
 '''
 
-
+"""
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         # Ensure nums1 is the smaller array (for efficiency)
@@ -74,7 +74,7 @@ class Solution:
 
         return 0.0  # Should never reach here
 
-'''
+"""
 Walkthrough
 ** Example
 1: ** `nums1 = [1, 3], nums2 = [2]
@@ -186,5 +186,4 @@ Right: {3, 4}
 2 <= 3 ✓  Valid!
 
 Median = (max(1, 2) + min(3, 4)) / 2 = 2.5
-
-'''
+"""
